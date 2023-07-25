@@ -2,22 +2,32 @@
 
 Console.WriteLine("Type your number:  ");
 int num = Convert.ToInt32(Console.ReadLine());
+int number = 0;
+
+if (num < 0)
+{
+   number =  num * (-1);
+}
+else
+{
+   number =  num;
+}
 
 List<int> digits = new List<int>();
 
-foreach (char c in num.ToString())
+foreach (char c in number.ToString())
 {
     int digit = int.Parse(c.ToString());
     digits.Add(digit);
 }
 
-int lg = digits.Count();
-if (lg >= 3)
+
+if (digits.Count() >= 3)
 {
 int ThDigit = digits[2];
 Console.WriteLine(ThDigit);
 }
 else
 {
-  Console.WriteLine("There is no third digit found "); // If the input is less than or equal to one, there are
+  Console.WriteLine("There is no third digit found "); 
 }
